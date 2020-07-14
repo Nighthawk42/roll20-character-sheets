@@ -3,7 +3,7 @@
 /*----------- Repeating Blocks -------------*/
 .charsheet .repcontrol_add {
     display: block;
-    background:#7F2108;
+    background:#08337d;
     color:white;
     text-shadow:0px 0px 2px #000,0px 0px 2px #000,0px 0px 2px #000;
     box-shadow:none;
@@ -11,12 +11,12 @@
     margin-bottom:0px;
     font-size:0.9em;
     height:2.2em;
-    font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .charsheet .repcontrol_edit
 {
     display: inline-block;
-    background:#7F2108;
+    background:#08337d;
     color:white;
     text-shadow:0px 0px 2px #000,0px 0px 2px #000,0px 0px 2px #000;
     box-shadow:none;
@@ -24,7 +24,7 @@
     margin-bottom:5px;
     font-size:0.9em;
     height:2.2em;
-    font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .charsheet .repcontrol_del {
     background:red;
@@ -42,7 +42,7 @@
 }
 
 .sheet-banner {
-    background-image:url('https://i.imgur.com/HN1NCU1.png');
+    background-image:url('https://i.imgur.com/UOA7HcU.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height:200px;
@@ -92,11 +92,11 @@ div.sheet-core-content {
     display: inline-block; 
     font-size: 13px;    
     background-repeat: no-repeat;
-	color: #7F2108; 
+	color: #08337d; 
 	font-weight: bold;
-    font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+    font-family: 'Roboto Condensed', sans-serif;
 	border-radius: 4px;
-    border: 2px solid #7F2108;
+    border: 2px solid #08337d;
 	
 	width: 100px; 
     height: 20px; 
@@ -114,10 +114,10 @@ div.sheet-core-content {
 .charsheet input.sheet-tab6:checked + span.sheet-tab6,
 .charsheet input.sheet-tab99:checked + span.sheet-tab99 {
     
-    background: #7F2108;  /*originally ab8b57*/  
+    background: #08337d;  /*originally ab8b57*/  
     color: white; /*originally white*/
 	border-radius: 4px;
-    border: 2px solid #7F2108;
+    border: 2px solid #08337d;
 }
 
 /*----------- End Tab Setup -----------*/
@@ -126,19 +126,19 @@ div.sheet-core-content {
 .sheet-tableI {
     margin-left:auto;
     margin-right:auto;
-    font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .sheet-tableI th {
     font-size:8px;
     vertical-align:super;
 }
 .sheet-font {
-    font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+    font-family: 'Roboto Condensed', sans-serif;
     font-weight:normal;
     }
 .sheet-tableII th {
     background:#000;
-    color:white;
+    color:CornflowerBlue; /*originally white*/
 }
 .sheet-tableII {
     margin-left:auto;
@@ -146,7 +146,7 @@ div.sheet-core-content {
 }
 .sheet-tableII th.sheet-heading {
     background:#000;
-    color:white;
+    color:CornflowerBlue; /*originally white*/
     font-size:9px;
 }
 
@@ -172,7 +172,7 @@ input.sheet-text[type="text"]:focus {
     border-radius:0px;
     box-shadow:none;
     font-size:1.8em;
-    font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+    font-family: 'Roboto Condensed', sans-serif;
     text-align:center;
     background: transparent;
 }
@@ -217,7 +217,7 @@ input[type=number]:hover {
     border-radius:5px;
     box-shadow:none;
     text-align:center;
-    color:black:
+    color:black;
     font-size:1.2em;
     margin:2px;
 }
@@ -227,7 +227,7 @@ input[type=number]:hover {
     border-radius:5px;
     box-shadow:none;
     text-align:center;
-    color:black:
+    color:black;
     font-size:1.2em;
     margin:2px;
     width:100px;
@@ -292,37 +292,37 @@ select.sheet-Specialty {
 }
 
 h3 {
-    font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+    font-family: 'Roboto Condensed', sans-serif;
     text-align:center;
 }
 h4 {
-    font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+    font-family: 'Roboto Condensed', sans-serif;
     color: #000;
     font-weight:bold;
     text-align:center;
 }
 h5 {
-    font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+    font-family: 'Roboto Condensed', sans-serif;
     color: #000;
     font-weight:bold;
 }
 textarea.sheet-notes {
     border-radius:15px;
-    border: 2px solid #7F2108;
+    border: 2px solid #08337d;
     height:130px;
     resize:vertical;
-    font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 textarea.sheet-longnotes {
     border-radius:15px;
-    border: 2px solid #7F2108;
+    border: 2px solid #08337d;
     height:130px;
     resize:vertical;
-    font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-/*-----Tootl Tips-----*/
+/*-----Tool Tips-----*/
 div.sheet-tooltips {
   position: relative;
   display: inline;
@@ -389,7 +389,7 @@ div.sheet-tooltips:hover span {
 
 }
 /*-----radio boxes-----*/
-/*-----Tootl Tips-----*/
+/*-----Tool Tips-----*/
 div.sheet-tooltipsdown {
   position: relative;
   display: inline;
@@ -627,7 +627,7 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before
     height:50px; 
     width: 90px; 
     padding-left:20px;
-    color: white;
+    color: CornflowerBlue; /*Originally White*/
 }
 .sheet-skillbtn button[type="roll"]:hover,
 .sheet-skillbtn:hover  {
@@ -753,7 +753,7 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before
     -moz-border-radius: 5px; 
     -webkit-border-radius: 5px; 
     border-radius: 5px; 
-    border: 2px solid #7F2108; 
+    border: 2px solid #08337d; 
     box-shadow: none;
     outline:0; 
     
@@ -770,20 +770,20 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before
 .sheet-fxbtn button[type="roll"]:hover,
 .sheet-fxbtn:hover  {
     background: black; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left, black , #7F2108); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, black, #7F2108); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, black, #7F2108); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, black , #7F2108); /* Standard syntax */
+    background: -webkit-linear-gradient(left, black , #08337d); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, black, #08337d); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, black, #08337d); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, black , #08337d); /* Standard syntax */
     color: white;
 }
 
 .sheet-fxbtn button[type="roll"]:active,
 .sheet-fxbtn:active  {
     background: black; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left, #7F2108 , black); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #7F2108, black); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #7F2108, black); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #7F2108 , black); /* Standard syntax */
+    background: -webkit-linear-gradient(left, #08337d , black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #08337d, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #08337d, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #08337d , black); /* Standard syntax */
     color: white;
 }
         /*=== Roll Templates ===*/
@@ -791,12 +791,12 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before
 .sheet-rolltemplate-show table {
     width: 100%;
     border-radius:15px 15px 15px 15px;
-    color: #7F2108;
+    color: #08337d;
     font-size: 1em;
     font-variant: small-caps;
     box-shadow: none;
     background: #F3F8F6;
-    box-shadow: 0px 0px 2px #7F2108, 0px 0px 2px #7F2108, 0px 0px 2px #7F2108;
+    box-shadow: 0px 0px 2px #08337d, 0px 0px 2px #08337d, 0px 0px 2px #08337d;
 }
 
 .sheet-rolltemplate-show td {
@@ -808,12 +808,12 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before
 .sheet-rolltemplate-attack table {
     width: 100%;
     border-radius:15px 15px 15px 15px;
-    color: #7F2108;
+    color: #08337d;
     font-size: 1em;
     font-variant: small-caps;
     box-shadow: none;
     background: #F3F8F6;
-    box-shadow: 0px 0px 2px #7F2108, 0px 0px 2px #7F2108, 0px 0px 2px #7F2108;
+    box-shadow: 0px 0px 2px #08337d, 0px 0px 2px #08337d, 0px 0px 2px #08337d;
 }
 
 .sheet-rolltemplate-attack td {
@@ -867,12 +867,12 @@ input.sheet-bigcheck[type="Checkbox"]:checked + span::before
 .sheet-rolltemplate-fx table {
     width: 100%;
     border-radius:15px 15px 15px 15px;
-    color: #7F2108;
+    color: #08337d;
     font-size: 1em;
     font-variant: small-caps;
     box-shadow: none;
     background: #F3F8F6;
-    box-shadow: 0px 0px 2px #7F2108, 0px 0px 2px #7F2108, 0px 0px 2px #7F2108;
+    box-shadow: 0px 0px 2px #08337d, 0px 0px 2px #08337d, 0px 0px 2px #08337d;
 }
 
 .sheet-rolltemplate-fx td {

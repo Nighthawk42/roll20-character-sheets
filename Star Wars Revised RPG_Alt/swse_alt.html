@@ -126,13 +126,13 @@
                     </tr>
 					 <tr>
                         <td><input type="text" class="sheet-text" name="attr_Personality" style="width:100%"/></td> <!-- Custom Stat, comment to remove -->
-                        <td><input type="text" class="sheet-text" name="attr_exp" style="width:100%"/></td>
-                        <td><input type="text" class="sheet-text" name="attr_darksidepts" style="width:100%"/></td>
+						<td><input type="text" class="sheet-text" name="attr_Alignment" style="width:100%"/></td>
+                        <td><input type="text" class="sheet-text" name="attr_Exp" style="width:100%"/></td>
                     </tr>
                     <tr>
                         <th>Personality</th>
+						<th>Alignment</th>
 						<th>Experience</th>
-                        <th>Dark Side Points</th>
                     </tr>
                 </table>
             </div>
@@ -146,15 +146,13 @@
 <input type="radio" class="sheet-tab sheet-tab2" name="attr_core-tab" value="2" title="Combat" /> 
 <span class="sheet-tab sheet-tab2" style='line-height: 20px;'>Combat</span>
 <input type="radio" class="sheet-tab sheet-tab3" name="attr_core-tab" value="3" title="Feats &amp; Talents" /> 
-<span class="sheet-tab sheet-tab3" style='line-height: 20px;'><div class="sheet-smaller">Feats &amp; Talents</div></span>
+<span class="sheet-tab sheet-tab3" style='line-height: 20px; width:200px;'>Feats &amp; Class Abilities</div></span>
 <input type="radio" class="sheet-tab sheet-tab4" name="attr_core-tab" value="4" title="Equipment" /> 
 <span class="sheet-tab sheet-tab4" style='line-height: 20px;'>Equipment</span>
-<!--<input type="radio" class="sheet-tab sheet-tab5" name="attr_core-tab" value="5" title="The Force" /> UNCOMMENT THESE LATER!
+<input type="radio" class="sheet-tab sheet-tab5" name="attr_core-tab" value="5" title="The Force" />
 <span class="sheet-tab sheet-tab5" style='line-height: 20px;'>The Force</span>
-<input type="radio" class="sheet-tab sheet-tab5" name="attr_core-tab" value="5" title="Starship" /> 
+<input type="radio" class="sheet-tab sheet-tab6" name="attr_core-tab" value="6" title="Starship" /> 
 <span class="sheet-tab sheet-tab5" style='line-height: 20px;'>Starship</span>
-<input type="radio" class="sheet-tab sheet-tab5" name="attr_core-tab" value="5" title="Notes" /> 
-<span class="sheet-tab sheet-tab5" style='line-height: 20px;'>Notes</span> -->
 <input type="radio" class="sheet-tab sheet-tab99" name="attr_core-tab" value="99" title="All" />
 <span class="sheet-tab sheet-tab99" style='line-height: 20px;'>All</span>    
 <br><br>
@@ -219,7 +217,7 @@
                     <th><input type="number" class="sheet-ability" name="attr_Charisma" value="@{Charisma-Base}+@{Charisma-Misc}" disabled="true"/></th>
                     <th><input type="number" class="sheet-ability" name="attr_Charisma-mod" value="[[floor((@{Charisma}-10)/2)]]" disabled="true"/></th>
                     <td><input type="number" class="sheet-number" name="attr_Charisma-Base" value="10"/></td>
-                    <input type="number" class="sheet-number" name="attr_Charisma-Temp" value="0"/></d>
+                    <td><input type="number" class="sheet-number" name="attr_Charisma-Temp" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Charisma-Misc" value="0"/></td>
                 </tr>
             </table>
@@ -309,22 +307,21 @@
                         </select>
                     </td>
                 </tr>
+				<tr>
+                    <th><button type="roll" class="sheet-skillbtn" name="roll_DarkSidePts" value="" disabled="true">Dark Side Points</button></th>
+                    <th><input type="number" class="sheet-ability" name="attr_DarkSidePts" value=""/></th>
+                </tr>
+				<tr>
+                    <th><button type="roll" class="sheet-skillbtn" name="roll_Credits" value="" disabled="true">Credits</button></th>
+                    <th><input type="text" class="sheet-ability" name="attr_Credits" style="width: 90px" value=""/></th>
+                </tr>
                 <!--<tr> Wealth doesn't exist in SWRE, uncomment to use it.
                     <th><button type="roll" class="sheet-skillbtn" name="roll_Wealth" value="/e rolls Wealth [[1d20+@{Wealth}]]" >Wealth</button></th>
                     <th><input type="number" class="sheet-ability" name="attr_Wealth" value="@{Wealth-Base}+@{Wealth-Other}" disabled="true"/></th>
                     <td><input type="number" class="sheet-number" name="attr_Wealth-Base" value="0" /></td>
                     <td><input type="number" class="sheet-number" name="attr_Wealth-Other" value="0"/></td>
                 </tr> -->
-                <tr>
-                    <th></th>
-                    <th class="sheet-heading">Total</th>
-                    <th class="sheet-heading">Base</th>
-                    <th class="sheet-heading">Other</th>
-                    <th class="sheet-heading"></th>
-                    <th class="sheet-heading"></th>
-                </tr>
             </table>
-
         </div>
         <div class="sheet-col">
             <h4>Skills</h4> <!-- Skills -->
@@ -1540,7 +1537,7 @@
             </table>
         </div>
     </div>
-    <h4>Weapon</h4> <!-- Weapons -->
+    <h4>Weapons</h4> <!-- Weapons -->
     <fieldset class="repeating_weapons">
         <table class="sheet-tableII">
             <tr>
@@ -1608,7 +1605,7 @@
 <!-- Tab 3 Feats & Talents -->
 <div class="sheet-section-3">
     <div class='sheet-2colrow'>
-        <h3>Feats &amp; Talents</h3>
+        <h3>Feats &amp; Class Abilities</h3>
         <div class='sheet-col'>
             <h4>Feats</h4>
             <fieldset class="repeating_Feats">
@@ -1630,7 +1627,7 @@
             </fieldset>
         </div>
         <div class='sheet-col'>
-            <h4>Talents</h4>
+            <h4>Class Abilities</h4>
             <fieldset class="repeating_Talents">
                 <table class="sheet-table">
                     <tr>
@@ -1651,6 +1648,7 @@
         </div>
     </div>
 </div>
+
 <!-- Tab 4 Equipment -->
 <div class="sheet-section-4">
     <div class='sheet-3colrow'>
@@ -1683,238 +1681,420 @@
         </div>
     </div>
 </div>
-<!-- Tab 5 FX -->
+
+<!-- Tab 5 The Force -->
 <div class="sheet-section-5">
-    <h4>FX Abilities</h4>
-    <table class="sheet-tableII">
-        <tr>
-            <th class="sheet-heading">Fx Source</th>
-            <th class="sheet-heading">Level</th>
-            <th class="sheet-heading">Attribute</th>
-            <th class="sheet-heading">Fx<br>Known</th>
-            <th class="sheet-heading">Max<br>Known</th>
-            <th class="sheet-heading">Power Point<br>Max</th>
-            <th class="sheet-heading">Power Point<br>Current</th>
-            <th></th>
-        </tr>
-        <tr>
-            <td><input type="text" class="sheet-number" name="attr_fx-Source" value="" placeholder="Arcane caster, Psychic" style="width:200px"/></td>
-            <td><input type="number" class="sheet-number" name="attr_fx-CsdterLevel" value="0" /></td>
-            <td>
-                <select class="sheet-number" name="attr_fx-Attribute" >
-                    <option value="@{Strength-mod}">Strength</option>
-                    <option value="@{Dexterity-mod}">Dexterity</option>
-                    <option value="@{Constitution-mod}">Constitution</option>
-                    <option value="@{Intelligence-mod}" selected>Intelligence</option>
-                    <option value="@{Wisdom-mod}">Wisdom</option>
-                    <option value="@{Charisma-mod}">Charisma</option>
-                </select></td>
-            <td><input type="number" class="sheet-number" name="attr_fx-Known" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_fx-Max_Known" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_fx-PP_Max" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_fx-PP_Current" value="0" /></td>
-            <th></th>
-        </tr>
-    </table>
-    <br>
     <div class='sheet-2colrow'>
         <div class='sheet-col'>
-            <fieldset class="repeating_FX1">
-                <table class="sheet-tableII" style="width:400px">
-                    <tr>
-                        <th><button type="roll" class="sheet-fxbtn" name="FX_roll" value="&amp;{template:fx}{{character= @{character_name}}} {{fx= @{FX-Name}}}{{DC= @{FX-DC}}} @{FX-include1} @{FX-include2} @{FX-include3} @{FX-include4} @{FX-include5} @{FX-include6} @{FX-include7} @{FX-include8} @{FX-include9} @{FX-include10} @{FX-include11}">FX</button></th>
-                        <th class="sheet-heading">Name</th>
-                        <td><input type="text" class="sheet-number" name="attr_FX-Name" value="" style="width:200px"/></td>
-                        <td><input type="checkbox" class="sheet-bigcheck" name="attr_FX-Show" value="1" /><span></span></td>
-                    </tr>
-                </table>
-                <input type="checkbox" class="sheet-hidden sheet-hider" name="attr_FX-Show" value="1" /><span></span>
-                <div class="sheet-hold">
-                    <table class="sheet-tableII" style="width:400px">
-                        <tr>
-                            <th class="sheet-heading" colspan="2">Include?</th>
-                            <th class="sheet-heading"></th>
-                            <th class="sheet-heading"></th>
-                            <th class="sheet-heading"></th>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading">N</th>
-                            <th class="sheet-heading">Y</th>
-                            <th class="sheet-heading"></th>
-                            <th class="sheet-heading"></th>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include1" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include1" value="{{Decriptors= @{FX-Decriptors}}}" /><span></span></th>
-                            <th class="sheet-heading">Decriptors</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Decriptors" style="width:200px" /></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include2" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include2" value="{{Level= @{FX-Level}}}" /><span></span></th>
-                            <th class="sheet-heading">Level / DC</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Level" value="0" style="width:100px"/>/<input type="number" class="sheet-number" name="attr_FX-DC" value='10 + @{FX-Level} + @{fx-Attribute}' style="width:100px" disabled='true'/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include3" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include3" value="{{Components= @{FX-Components}}}" /><span></span></th>
-                            <th class="sheet-heading">Components</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Components" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include4" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include4" value="{{Casting_Time= @{FX-Casting_Time}}}" /><span></span></th>
-                            <th class="sheet-heading">Casting Time</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Casting_Time" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include5" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include5" value="{{Range= @{FX-Range}}}" /><span></span></th>
-                            <th class="sheet-heading">Range</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Range" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include6" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include6" value="{{Effect= @{FX-Effect}}}" /><span></span></th>
-                            <th class="sheet-heading">Effect</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Effect" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include7" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include7" value="{{Area= @{FX-Area}}}" /><span></span></th>
-                            <th class="sheet-heading">Area</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Area" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include8" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include8" value="{{Duration= @{FX-Duration}}}" /><span></span></th>
-                            <th class="sheet-heading">Duration</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Duration" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include9" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include9" value="{{Saving_Throw= @{FX-Saving_Throw}}}" /><span></span></th>
-                            <th class="sheet-heading">Saving Throw</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Saving_Throw" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include10" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include10" value="{{Resistance}= @{FX-Resistance}}" /><span></span></th>
-                            <th class="sheet-heading">Resistance</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Resistance" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include11" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include11" value="{{Descriptive_Text= @{FX-Descriptive_Text}}}" /><span></span></th>
-                            <th class="sheet-heading">Descriptive Text</th>
-                            <td><textarea class="sheet-notes" name="attr_FX-Descriptive_Text"></textarea></td>
-                        </tr>
-                    </table>
-                </div>
-            </fieldset>
-        </div>
+            <h3>Force Skills</h3> <!-- Force Skills Skills -->
+            <table class="sheet-tableII">
+                <tr>
+                    <th class="sheet-heading">Cross<br>Class</th>
+                    <th class="sheet-heading">Skill</th>
+					<th class="sheet-heading">Feat</th>
+                    <th class="sheet-heading">Total</th>
+                    <th class="sheet-heading">Ability</th>
+                    <th class="sheet-heading">Ranks</th>
+                    <th class="sheet-heading">Misc</th>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_AffectMind-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_AffectMind" value="/e uses Affect Mind [[1d20+@{AffectMind}]]" >Affect Mind</button></td>
+					<td><input type="text" class="sheet-number" name="attr_AffectMind-Feat"  value="Alter" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_AffectMind" value="[[@{AffectMind-ability}+@{AffectMind-Ranks}+@{AffectMind-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_AffectMind-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}" selected>Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_AffectMind-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_AffectMind-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Battlemind-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Battlemind" value="/e uses Battlemind [[1d20+@{Battlemind}]]" >Battlemind</button></td>
+					<td><input type="text" class="sheet-number" name="attr_Battlemind-Feat"  value="Control" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Battlemind" value="[[@{Battlemind-ability}+@{Battlemind-Ranks}+@{Battlemind-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Battlemind-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}" selected>Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Battlemind-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Battlemind-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_DrainEnergy-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_DrainEnergy" value="/e uses Drain Energy [[1d20+@{DrainEnergy}]]" >Drain Energy *Δ</button></td>
+					<td><input type="text" class="sheet-number" name="attr_DrainEnergy-Feat"  value="Alter" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_DrainEnergy" value="[[@{DrainEnergy-ability}+@{DrainEnergy-Ranks}+@{DrainEnergy-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_DrainEnergy-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}" selected>Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_DrainEnergy-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_DrainEnergy-Misc" value="0"/></td>
+                </tr>
+				<br>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Empathy-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Empathy" value="/e uses Empathy [[1d20+@{Empathy}]]" >Empathy *</button></td>
+					<td><input type="text" class="sheet-number" name="attr_Empathy-Feat"  value="Force" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Empathy" value="[[@{Empathy-ability}+@{Empathy-Ranks}+@{Empathy-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Empathy-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}" selected>Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Empathy-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Empathy-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_EnhanceAbility-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_EnhanceAbility" value="/e uses Enhance Ability [[1d20+@{EnhanceAbility}]]" >Enhance Ability</button></td>
+					<td><input type="text" class="sheet-number" name="attr_EnhanceAbility-Feat"  value="Force" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_EnhanceAbility" value="[[@{EnhanceAbility-ability}+@{EnhanceAbility-Ranks}+@{EnhanceAbility-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_EnhanceAbility-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}" selected>Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_EnhanceAbility-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_EnhanceAbility-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_EnhanceSenses-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_EnhanceSenses" value="/e uses Enhance Senses [[1d20+@{EnhanceSenses}]]" >Enhance Senses</button></td>
+					<td><input type="text" class="sheet-number" name="attr_EnhanceSenses-Feat"  value="Sense" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_EnhanceSenses" value="[[@{EnhanceSenses-ability}+@{EnhanceSenses-Ranks}+@{EnhanceSenses-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_EnhanceSenses-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}" selected>Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_EnhanceSenses-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_EnhanceSenses-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Farseeing-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Farseeing" value="/e uses Farseeing [[1d20+@{Farseeing}]]" >Farseeing</button></td>
+					<td><input type="text" class="sheet-number" name="attr_Farseeing-Feat"  value="Sense" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Farseeing" value="[[@{Farseeing-ability}+@{Farseeing-Ranks}+@{Farseeing-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Farseeing-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}" selected>Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Farseeing-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Farseeing-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Fear-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Fear" value="/e uses Fear [[1d20+@{Fear}]]" >Fear *Δ</button></td>
+					<td><input type="text" class="sheet-number" name="attr_Fear-Feat"  value="Sense" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Fear" value="[[@{Fear-ability}+@{Fear-Ranks}+@{Fear-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Fear-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}" selected>Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Fear-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Fear-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_ForceDefense-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_ForceDefense" value="/e uses Force Defense [[1d20+@{ForceDefense}]]" >Force Defense</button></td>
+					<td><input type="text" class="sheet-number" name="attr_ForceDefense-Feat"  value="Control" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_ForceDefense" value="[[@{ForceDefense-ability}+@{ForceDefense-Ranks}+@{ForceDefense-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_ForceDefense-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}" selected>Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_ForceDefense-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_ForceDefense-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_ForceGrip-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_ForceGrip" value="/e uses Force Grip [[1d20+@{ForceGrip}]]" >Force Grip *Δ</button></td>
+					<td><input type="text" class="sheet-number" name="attr_ForceGrip-Feat"  value="Alter" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_ForceGrip" value="[[@{ForceGrip-ability}+@{ForceGrip-Ranks}+@{ForceGrip-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_ForceGrip-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_ForceGrip-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_ForceGrip-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_ForceLightning-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_ForceLightning" value="/e uses Force Lightning [[1d20+@{ForceLightning}]]" >Force Lightning *Δ</button></td>
+					<td><input type="text" class="sheet-number" name="attr_ForceLightning-Feat"  value="Alter" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_ForceLightning" value="[[@{ForceLightning-ability}+@{ForceLightning-Ranks}+@{ForceLightning-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_ForceLightning-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_ForceLightning-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_ForceLightning-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_ForceStealth-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_ForceStealth" value="/e uses Force Stealth [[1d20+@{ForceStealth}]]" >Force Stealth *</button></td>
+					<td><input type="text" class="sheet-number" name="attr_ForceStealth-Feat"  value="Control" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_ForceStealth" value="[[@{ForceStealth-ability}+@{ForceStealth-Ranks}+@{ForceStealth-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_ForceStealth-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}" selected>Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_ForceStealth-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_ForceStealth-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_ForceStrike-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_ForceStrike" value="/e uses Force Strike [[1d20+@{ForceStrike}]]" >Force Strike *</button></td>
+					<td><input type="text" class="sheet-number" name="attr_ForceStrike-Feat"  value="Alter" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_ForceStrike" value="[[@{ForceStrike-ability}+@{ForceStrike-Ranks}+@{ForceStrike-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_ForceStrike-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_ForceStrike-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_ForceStrike-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Friendship-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Friendship" value="/e uses Friendship [[1d20+@{Friendship}]]" >Friendship *</button></td>
+					<td><input type="text" class="sheet-number" name="attr_Friendship-Feat"  value="Force" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Friendship" value="[[@{Friendship-ability}+@{Friendship-Ranks}+@{Friendship-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Friendship-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}" selected>Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Friendship-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Friendship-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_HealAnother-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_HealAnother" value="/e uses Heal Another [[1d20+@{HealAnother}]]" >Heal Another *</button></td>
+					<td><input type="text" class="sheet-number" name="attr_HealAnother-Feat"  value="Alter" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_HealAnother" value="[[@{HealAnother-ability}+@{HealAnother-Ranks}+@{HealAnother-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_HealAnother-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}" selected>Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_HealAnother-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_HealAnother-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_HealSelf-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_HealSelf" value="/e uses Heal Self [[1d20+@{HealSelf}]]" >Heal Self *</button></td>
+					<td><input type="text" class="sheet-number" name="attr_HealSelf-Feat"  value="Control" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_HealSelf" value="[[@{HealSelf-ability}+@{HealSelf-Ranks}+@{HealSelf-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_HealSelf-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}" selected>Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_HealSelf-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_HealSelf-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Illusion-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Illusion" value="/e uses Illusion [[1d20+@{Illusion}]]" >Illusion</button></td>
+					<td><input type="text" class="sheet-number" name="attr_Illusion-Feat"  value="Alter" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Illusion" value="[[@{Illusion-ability}+@{Illusion-Ranks}+@{Illusion-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Illusion-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}" selected>Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Illusion-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Illusion-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_MoveObject-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_MoveObject" value="/e uses Move Object [[1d20+@{MoveObject}]]" >Move Object</button></td>
+					<td><input type="text" class="sheet-number" name="attr_MoveObject-Feat"  value="Alter" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_MoveObject" value="[[@{MoveObject-ability}+@{MoveObject-Ranks}+@{MoveObject-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_MoveObject-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_MoveObject-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_MoveObject-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_SeeForce-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_SeeForce" value="/e uses See Force [[1d20+@{SeeForce}]]" >See Force *</button></td>
+					<td><input type="text" class="sheet-number" name="attr_SeeForce-Feat"  value="Sense" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_SeeForce" value="[[@{SeeForce-ability}+@{SeeForce-Ranks}+@{SeeForce-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_SeeForce-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}" selected>Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_SeeForce-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_SeeForce-Misc" value="0"/></td>
+                </tr>
+				<tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Telepathy-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Telepathy" value="/e uses Telepathy [[1d20+@{Telepathy}]]" >Telepathy</button></td>
+					<td><input type="text" class="sheet-number" name="attr_Telepathy-Feat"  value="Sense" style="width:55px" disabled="true"/></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Telepathy" value="[[@{Telepathy-ability}+@{Telepathy-Ranks}+@{Telepathy-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Telepathy-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}" selected>Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Telepathy-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Telepathy-Misc" value="0"/></td>
+                </tr>
+			</table>
+			<span class="sheet-text">Force Skills marked with * can be used untrained (0 Ranks).</span>
+			<span class="sheet-text">Force Skills marked with Δ incur a Dark Side Point.</span>
+        </div> <!-- End of Force Skills -->  
         <div class='sheet-col'>
-            <fieldset class="repeating_FX2">
-                <table class="sheet-tableII" style="width:400px">
+        <h3>Force Feats</h3>
+            <fieldset class="repeating_ForceFeats">
+                <table class="sheet-table">
                     <tr>
-                        <th><button type="roll" class="sheet-fxbtn" name="FX_roll" value="&amp;{template:fx}{{character= @{character_name}}}{{DC= @{FX-DC}}} {{fx= @{FX-Name}}} @{FX-include1} @{FX-include2} @{FX-include3} @{FX-include4} @{FX-include5} @{FX-include6} @{FX-include7} @{FX-include8} @{FX-include9} @{FX-include10} @{FX-include11}">FX</button></th>
-                        <th class="sheet-heading">Name</th>
-                        <td><input type="text" class="sheet-number" name="attr_FX-Name" value="" style="width:200px"/></td>
-                        <td><input type="checkbox" class="sheet-bigcheck" name="attr_FX-Show" value="1" /><span></span></td>
+                        <td><input type="text" class="sheet-number" name="attr_ForceFeat-name" placeholder="ForceFeat Name" style="width:200px;"/></td>
+                        <th><input type="checkbox" class="sheet-bigcheck" name="attr_ForceFeat-show" value="1"/><span></span></th>
                     </tr>
                 </table>
-                <input type="checkbox" class="sheet-hidden sheet-hider" name="attr_FX-Show" value="1" /><span></span>
+                <input type="checkbox" class="sheet-hidden sheet-hider" name="attr_ForceFeat-show" value="1"/><span></span>
                 <div class="sheet-hold">
-                    <table class="sheet-tableII" style="width:400px">
+                    <table class="sheet-table" style="width:100%;">
                         <tr>
-                            <th class="sheet-heading" colspan="2">Include?</th>
-                            <th class="sheet-heading"></th>
-                            <th class="sheet-heading"></th>
-                            <th class="sheet-heading"></th>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading">N</th>
-                            <th class="sheet-heading">Y</th>
-                            <th class="sheet-heading"></th>
-                            <th class="sheet-heading"></th>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include1" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include1" value="{{Decriptors= @{FX-Decriptors}}}" /><span></span></th>
-                            <th class="sheet-heading">Decriptors</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Decriptors" style="width:200px" /></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include2" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include2" value="{{Level= @{FX-Level}}}" /><span></span></th>
-                            <th class="sheet-heading">Level / DC</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Level" value="0" style="width:100px"/>/<input type="text" class="sheet-number" name="attr_FX-DC" value="10 + @{FX-Level} + @{fx-Attribute}" style="width:100px" disabled='true'/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include3" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include3" value="{{Components= @{FX-Components}}}" /><span></span></th>
-                            <th class="sheet-heading">Components</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Components" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include4" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include4" value="{{Casting_Time= @{FX-Casting_Time}}}" /><span></span></th>
-                            <th class="sheet-heading">Casting Time</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Casting_Time" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include5" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include5" value="{{Range= @{FX-Range}}}" /><span></span></th>
-                            <th class="sheet-heading">Range</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Range" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include6" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include6" value="{{Effect= @{FX-Effect}}}" /><span></span></th>
-                            <th class="sheet-heading">Effect</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Effect" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include7" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include7" value="{{Area= @{FX-Area}}}" /><span></span></th>
-                            <th class="sheet-heading">Area</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Area" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include8" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include8" value="{{Duration= @{FX-Duration}}}" /><span></span></th>
-                            <th class="sheet-heading">Duration</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Duration" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include9" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include9" value="{{Saving_Throw= @{FX-Saving_Throw}}}" /><span></span></th>
-                            <th class="sheet-heading">Saving Throw</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Saving_Throw" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include10" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include10" value="{{Resistance}= @{FX-Resistance}}" /><span></span></th>
-                            <th class="sheet-heading">Resistance</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Resistance" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include11" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include11" value="{{Descriptive_Text= @{FX-Descriptive_Text}}}" /><span></span></th>
-                            <th class="sheet-heading">Descriptive Text</th>
-                            <td><textarea class="sheet-notes" name="attr_FX-Descriptive_Text"></textarea></td>
+                            <td><textarea class="sheet-notes" name="attr_ForceFeat-details" wrap="soft" placeholder="ForceFeat Details"></textarea></td>
                         </tr>
                     </table>
                 </div>
             </fieldset>
-        </div>
+        </div>		
+	</div>
+	
+<!-- Tab 6 Starship Sheet -->
+<div class="sheet-section-6">
+    <div class='sheet-3colrow'>
+        <div class='sheet-col'>
+            <h3>Starship</h3>
+	    </div>
+	</div>
+<!-- Closing Tag - Do NOT Remove -->	
     </div>
 </div>
 
-    		
-    </div>
-</div>
-<!-- rolltemplates -->
+<!-- Roll Templates -->
 <rolltemplate class="sheet-rolltemplate-show">
     <table>
         <tr>
@@ -1960,92 +2140,6 @@
         </tr> 
     </table>
 </rolltemplate>
-<rolltemplate class="sheet-rolltemplate-fx">
-    <table>
-        <tr>
-            <th colspan="2">{{fx}}</th>
-        </tr>
-        <tr>
-            <th>DC</th>
-            <th>{{DC}}</th>
-        </tr>
-        {{#Decriptors}} 
-        <tr>
-            <td>Decriptors</td>
-            <td>{{Decriptors}}</td>
-        </tr>
-        {{/Decriptors}} 
-        {{#Level}} 
-        <tr>
-            <td>Level</td>
-            <td>{{Level}}</td>
-        </tr>
-        {{/Level}} 
-
-        {{#Components}} 
-        <tr>
-            <td>Components</td>
-            <td>{{Components}}</td>
-        </tr>
-        {{/Components}} 
-
-        {{#Casting_Time}} 
-        <tr>
-            <td>Casting Time</td>
-            <td>{{Casting_Time}}</td>
-        </tr>
-        {{/Casting_Time}} 
-
-        {{#Range}} 
-        <tr>
-            <td>Range</td>
-            <td>{{Range}}</td>
-        </tr>
-        {{/Range}} 
-
-        {{#Effect}} 
-        <tr>
-            <td>Effect</td>
-            <td>{{Effect}}</td>
-        </tr>
-        {{/Effect}} 
-
-        {{#Area}} 
-        <tr>
-            <td>Area</td>
-            <td>{{Area}}</td>
-        </tr>
-        {{/Area}} 
-
-        {{#Duration}} 
-        <tr>
-            <td>Duration</td>
-            <td>{{Duration}}</td>
-        </tr>
-        {{/Duration}} 
-
-        {{#Saving_Throw}} 
-        <tr>
-            <td>Saving Throw</td>
-            <td>{{Saving_Throw}}</td>
-        </tr>
-        {{/Saving_Throw}} 
-
-        {{#Resistance}} 
-        <tr>
-            <td>Resistance</td>
-            <td>{{Resistance}}</td>
-        </tr>
-        {{/Resistance}} 
-
-        {{#Descriptive_Text}} 
-        <tr>
-            <td colspan="2"><i>{{Descriptive_Text}}</i></td>
-        </tr>
-        {{/Descriptive_Text}} 
-    </table>
-
-</rolltemplate>
 <script type="text/worker">
     //Con Mod
 on("change:Constitution sheet:opened", function() {
@@ -2065,3 +2159,9 @@ on("change:Class1-level change:Class2-level change:Class3-level change:Class4-le
     });
 });
 </script>
+
+<!-- Google Fonts CDN -->
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
+
